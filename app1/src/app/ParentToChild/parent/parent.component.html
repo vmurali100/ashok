@@ -1,5 +1,6 @@
 <p>parent works!</p>
-
-<button (click)="sendMessageToChild()">Send Message To Child</button>
-
-<app-child [receiveData]="message"></app-child>
+<app-child
+  [receiveMsg]="messageFromParent"
+  [receiveObj]="objParent"
+  [receiveArray]="arrayParent"
+></app-child>

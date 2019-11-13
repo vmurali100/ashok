@@ -6,9 +6,11 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./parent.component.css"]
 })
 export class ParentComponent implements OnInit {
-  message = "Message from Parent Component";
+  // Declare a String , Object And Array
+  messageFromParent = "Welcome TO Angular 8 From Parent";
+  objParent = { fname: "Murali", lname: "Krishna" };
+  arrayParent = ["Murali", "Ashok", "Ram", "Ravi"];
   constructor() {}
 
   ngOnInit() {}
-  sendMessageToChild() {}
 }

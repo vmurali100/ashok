@@ -1,0 +1,11 @@
+<p>parent1 works!</p>
+<H3>Message from Child : {{ messageFromChild }}</H3>
+<H3>Obj from Child : {{ objFromChild.fname }}</H3>
+<H3>Array from Child : {{ arrayFromChild[0] }}</H3>
+
+<hr />
+<app-child1
+  (customMsgEvent)="receiveMessageFromChild($event)"
+  (customObjEvent)="recieveObjFromChild($event)"
+  (customArrayEvent)="receiveArrayFromChild($event)"
+></app-child1>
