@@ -1,0 +1,15 @@
+<p>module-driven works!</p>
+<!-- Assigning The Form Instace Created In Ts Filwith Attribute Binding -->
+<form [formGroup]="userForm">
+  <label for="fname">First Name : </label>
+  <input type="text" name="" formControlName="fname" /><br />
+  <label for="">Last Name : </label>
+  <input type="text" name="" formControlName="lname" /><br />
+  <button type="button" (click)="addUser()">Add User</button>
+  <button type="button" (click)="updateUser()">Update User</button>
+</form>
+
+<app-show-users
+  [allUsers]="usersFomServer"
+  (sendUserToParent)="getUserFromShow($event)"
+></app-show-users>

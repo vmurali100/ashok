@@ -1,0 +1,10 @@
+<form #userForm="ngForm">
+  <label for="fname">First Name : </label>
+  <input type="text" ngModel name="fname" /> <br />
+  <label for="lname">Last Name : </label>
+  <input type="text" ngModel name="lname" /><br />
+  <button (click)="addUser(userForm)" type="button">Add User</button>
+</form>
+
+<hr />
+<app-show-users [allUsers]="usersFomServer"></app-show-users>

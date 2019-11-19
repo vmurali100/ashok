@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "fname": "Murali",
+      "lname": "Krishna",
+      "id": 1
+    },
+    {
+      "fname": "Arunama",
+      "lname": "Krishna",
+      "id": 2
+    },
+    {
+      "fname": "Ashok",
+      "lname": "kumar",
+      "id": 3
+    },
+    {
+      "fname": "Murali",
+      "lname": "VMK",
+      "id": 4
+    },
+    {
+      "fname": "Ram ",
+      "lname": "Krihna V",
+      "id": 5
+    },
+    {
+      "fname": "Ravi Kumar",
+      "lname": "Teja",
+      "id": 6
+    }
+  ]
+}
