@@ -1,0 +1,34 @@
+<p>contact works!</p>
+
+<select name="" id="" [(ngModel)]="selectedPerson">
+  <option [ngValue]="user" *ngFor="let user of users">{{ user.tel }}</option>
+</select>
+
+<div *ngIf="selectedPerson">
+  <tr>
+    <td>First Name</td>
+    <td>: <input type="text" value="{{ selectedPerson.fname }}" /></td>
+  </tr>
+  <tr>
+    <td>Last Name</td>
+    <td>: {{ selectedPerson.lname }}</td>
+  </tr>
+  <tr>
+    <td>Address</td>
+    <td>: {{ selectedPerson.address }}</td>
+  </tr>
+  <tr>
+    <td>City</td>
+    <td>: {{ selectedPerson.city }}</td>
+  </tr>
+  <tr>
+    <td>State</td>
+    <td>: {{ selectedPerson.state }}</td>
+  </tr>
+  <tr>
+    <td>Zip</td>
+    <td>: {{ selectedPerson.zip }}</td>
+  </tr>
+
+  <button>Update User</button>
+</div>
