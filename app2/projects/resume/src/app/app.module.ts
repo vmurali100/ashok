@@ -7,13 +7,17 @@ import { AppComponent } from "./app.component";
 import { AboutComponent } from "./about/about.component";
 import { ExperienceComponent } from "./experience/experience.component";
 import { EducationComponent } from "./education/education.component";
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
     ExperienceComponent,
-    EducationComponent
+    EducationComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [BrowserModule, AppRoutingModule, AngularFontAwesomeModule],
   providers: [],
