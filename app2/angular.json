@@ -19,12 +19,10 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": false,
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/font-awesome/css/font-awesome.css"
             ],
             "scripts": []
           },
@@ -84,13 +82,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"],
             "scripts": []
           }
         },
@@ -102,9 +95,7 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -120,6 +111,119 @@
           }
         }
       }
-    }},
+    },
+    "resume": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/resume",
+      "sourceRoot": "projects/resume/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/resume",
+            "index": "projects/resume/src/index.html",
+            "main": "projects/resume/src/main.ts",
+            "polyfills": "projects/resume/src/polyfills.ts",
+            "tsConfig": "projects/resume/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/resume/src/favicon.ico",
+              "projects/resume/src/assets"
+            ],
+            "styles": ["projects/resume/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/resume/src/environments/environment.ts",
+                  "with": "projects/resume/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "resume:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "resume:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "resume:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/resume/src/test.ts",
+            "polyfills": "projects/resume/src/polyfills.ts",
+            "tsConfig": "projects/resume/tsconfig.spec.json",
+            "karmaConfig": "projects/resume/karma.conf.js",
+            "assets": [
+              "projects/resume/src/favicon.ico",
+              "projects/resume/src/assets"
+            ],
+            "styles": ["projects/resume/src/styles.css"],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/resume/tsconfig.app.json",
+              "projects/resume/tsconfig.spec.json",
+              "projects/resume/e2e/tsconfig.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/resume/e2e/protractor.conf.js",
+            "devServerTarget": "resume:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "resume:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
   "defaultProject": "app2"
 }
